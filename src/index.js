@@ -4,7 +4,7 @@ import './index.css';
 import App from './Component/App';
 import reportWebVitals from './reportWebVitals';
 import Client from './Apollo/Client';
-import {ApolloProvider} from "@apollo/react-hooks"
+import {ApolloProvider} from "@apollo/client"
 ReactDOM.render(
   <ApolloProvider client={Client}>
     <App />

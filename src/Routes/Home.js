@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 
 export const Header = styled.div`
@@ -21,11 +22,7 @@ export default function Login() {
        </h3>
      </Header>
      <div style={{width:'100%',height:'90%',display:'flex',float:'left'}}>
-        <div style={{width:'75%',height:'100%',backgroundColor:'#482EF2'}}>
-          <Post style={{marginTop:30}} />
-        </div>
-        <div style={{width:'25%',height:'100%',backgroundColor:'#241C59',float:'left'}}>
-        </div>
+        
      </div>
     </div>
   );
