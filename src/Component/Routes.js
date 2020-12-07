@@ -10,8 +10,8 @@ import Home from "../Routes/Home";
 const LoggedInRoutes = () => (
   <>
     <Route exact path="/" component={Home} />
-    <Route exact path="/:id" component={Post} />
-    <Redirect from="*" to="/" />
+    <Route exact path="/post/:id" component={Post} />
+    
   </>
 );
 

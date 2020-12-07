@@ -118,13 +118,13 @@ export default function  Login() {
           <Input required="" type="email" placeholder="email" value={email} onChange={handleChange}></Input>
           <Input  id="code" required="" type="email" placeholder="code" value={code} onChange={handleCodeChange} style={{display:step ===1 ?'none':"",marginTop:10}} ></Input>
        </Card>
-        <Link to="/">
+       
           <Button onClick={step===1?onSubmit:onCodeSubmit}>
               <p style={{marginLeft:105}}>
                   Login
               </p>
           </Button>
-        </Link>
+   
         <div style={{display:'flex',}}>
         <p style={{marginTop:5,marginLeft:3}}>아직 회원이 아니신가요?</p>
         <Link to="signup">
