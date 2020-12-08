@@ -9,6 +9,7 @@ export const Header = styled.div`
 width:100%;
 height:10%;
 background-color:white;
+display:flex;
 `
 
 const Card = styled.div`
@@ -51,7 +52,6 @@ align-items:center;
 export default function Login() {
 
   const {data,loading} = useQuery(EXPLORE,{variables:{term:""}})
-  console.log(data)
   return (
     <div style={{ width: "100%", height:'100%',}}>
     <Helmet>
@@ -60,9 +60,14 @@ export default function Login() {
         </style>
     </Helmet>
      <Header>
-      <h3 style={{color:'black', fontSize:40,paddingTop:20,paddingLeft:6,fontFamily:'Ubuntu',paddingBottom:20}}>
+      <h3 style={{color:'black', fontSize:40,paddingTop:20,paddingLeft:60,fontFamily:'Ubuntu',paddingBottom:20}}>
          devmac BLOG
        </h3>
+       <Link style={{display:'flex', marginLeft:'auto',marginRight:0}} to="/isadmin">
+      <h3 style={{color:'black', fontSize:20,paddingTop:30,fontFamily:'Nanum Myeongjo',paddingBottom:20,marginLeft:'auto', marginRight:0, paddingRight:40}}>
+         글 쓰러 가기
+       </h3>
+       </Link>
      </Header>
 
      <div style={{marginTop:30,width:'100%',height:130,backgroundColor:'#FAFAFA',display:'flex',alignItems:'center',justifyContent:'center',}}>
@@ -79,7 +84,7 @@ export default function Login() {
           data &&
           data.searchPost &&
           data.searchPost.map(post => (
-            <Link to={"/post/"+post.id} >
+            <Link to={"/post/"+post.id} key={post.id} >
             <Card style={{marginLeft:20, marginTop:20,position:'relative'}} key={post.id}>
               <h2 style={{fontSize:30,fontFamily:'Nanum Myeongjo',color:'black'}}>
                 {post.title}

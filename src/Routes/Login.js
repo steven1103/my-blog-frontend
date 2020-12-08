@@ -1,6 +1,6 @@
 import { useMutation } from "@apollo/client";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import styled from "styled-components";
 import { CONFIRM_SECRET, LOCAL_LOG_IN, LOG_IN } from "./AuthQueries";
@@ -55,7 +55,7 @@ export default function  Login() {
   const [email,setemail] = useState("")
   const [code,setcode] = useState("")
   const [step,setStep] = useState(1)
-  
+  const history = useHistory()
 
   const handleChange = (e) => {
     setemail(e.target.value)
@@ -98,7 +98,7 @@ export default function  Login() {
       if(token !== "" && token !== undefined) {
        
         localLoginMutation({variables:{token}})
-    
+        history.push('/')
         toast.success("환영합니다!")
 
         setStep(3)
@@ -118,7 +118,6 @@ export default function  Login() {
           <Input required="" type="email" placeholder="email" value={email} onChange={handleChange}></Input>
           <Input  id="code" required="" type="email" placeholder="code" value={code} onChange={handleCodeChange} style={{display:step ===1 ?'none':"",marginTop:10}} ></Input>
        </Card>
-       
           <Button onClick={step===1?onSubmit:onCodeSubmit}>
               <p style={{marginLeft:105}}>
                   Login

@@ -21,4 +21,7 @@ export default createGlobalStyle`
     input:focus{
         outline:none;
     }
+    TextareaAutosize:focus{
+        outline:none;
+    }
 `;

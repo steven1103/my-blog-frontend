@@ -63,8 +63,16 @@ export const SINGLE_POST = gql`
       id
       title
       text
+      isLiked
+      isSelf
       tags {
+        id
         text
+      }
+      user {
+        username
+        id
+
       }
       createdAt
       updatedAt
@@ -99,4 +107,42 @@ export const toggleLikeC = gql`
      id:$id
      )
  }
+`
+export const toggleLikeP = gql`
+ mutation toggleLike(
+   $id:String!
+   ) 
+   {
+    toggleLike(
+     id:$id
+     )
+ }
+`
+export const addComment = gql`
+ mutation createComment($postId:String!$text:String!) {
+    createComment(
+      postId:$postId
+      text:$text
+     ) {
+       id
+     }
+ }
+`
+
+export const me = gql`
+  {
+    me {
+      username
+      avatar
+      id
+    }
+  }
+`
+
+export const isAdminCheck = gql`
+  mutation isAdmin($code:String!) {
+    isAdmin(
+      code:$code
+     ) 
+  }
 `

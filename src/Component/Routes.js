@@ -6,12 +6,15 @@ import Post from "../Routes/Post";
 import SignUp from "../Routes/SignUp"
 import Main from "../Routes/Main";
 import Home from "../Routes/Home";
+import IsAdminPage from "../Routes/isAdmin";
+import Edit from "../Routes/edit";
 
 const LoggedInRoutes = () => (
   <>
     <Route exact path="/" component={Home} />
     <Route exact path="/post/:id" component={Post} />
-    
+    <Route exact path="/isadmin" component={IsAdminPage} />
+    <Route exact path="/edit" component={Edit} />
   </>
 );
 
