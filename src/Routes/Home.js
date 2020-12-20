@@ -63,7 +63,7 @@ export default function Login() {
       <h3 style={{color:'black', fontSize:40,paddingTop:20,paddingLeft:60,fontFamily:'Ubuntu',paddingBottom:20}}>
          devmac BLOG
        </h3>
-       <Link style={{display:'flex', marginLeft:'auto',marginRight:0}} to="/isadmin">
+       <Link style={{display:'flex', marginLeft:'auto',marginRight:0,textDecoration:'none'}} to={'isadmin'}>
       <h3 style={{color:'black', fontSize:20,paddingTop:30,fontFamily:'Nanum Myeongjo',paddingBottom:20,marginLeft:'auto', marginRight:0, paddingRight:40}}>
          글 쓰러 가기
        </h3>
@@ -71,7 +71,7 @@ export default function Login() {
      </Header>
 
      <div style={{marginTop:30,width:'100%',height:130,backgroundColor:'#FAFAFA',display:'flex',alignItems:'center',justifyContent:'center',}}>
-        <h1 style={{fontSize:30,fontFamily:'Nanum Myeongjo'}} >
+        <h1 style={{fontSize:30,fontFamily:'Nanum Myeongjo',fontWeight:100}} >
           저의 블로그에 오신 걸 환영합니다,  
         </h1>
         <h1 style={{fontSize:30,fontFamily:'Nanum Myeongjo',paddingLeft:3}} >
@@ -84,12 +84,12 @@ export default function Login() {
           data &&
           data.searchPost &&
           data.searchPost.map(post => (
-            <Link to={"/post/"+post.id} key={post.id} >
+            <Link to={"/post/"+post.id} key={post.id} style={{textDecoration:'none'}} >
             <Card style={{marginLeft:20, marginTop:20,position:'relative'}} key={post.id}>
               <h2 style={{fontSize:30,fontFamily:'Nanum Myeongjo',color:'black'}}>
                 {post.title}
               </h2>
-              <h4 style={{fontSize:18,marginTop:80,fontFamily:'Nanum Myeongjo',color:'black'}}>
+              <h4 style={{fontSize:18,marginTop:40,fontFamily:'Nanum Myeongjo',color:'black',fontWeight:100,textDecoration:'none'}}>
                 {post.text.slice(0,12).concat("...")}
               </h4>
               <Timestamp style={{bottom:5,position:'absolute',color:'black'}}>

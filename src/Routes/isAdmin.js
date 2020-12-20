@@ -1,6 +1,6 @@
 import { useMutation } from "@apollo/client";
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import {  useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import styled from "styled-components";
 import { isAdminCheck } from "./AuthQueries";
